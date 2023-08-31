@@ -4,6 +4,7 @@
 }
 
 .nav{
+    width: 100vw;
     height: 60px;
     display: flex;
     align-items: center;
@@ -12,5 +13,7 @@
     color: white;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 600;
-    cursor: pointer
+    cursor: pointer;
+    position: fixed;
+    top: 0px;
 }

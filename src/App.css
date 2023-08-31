@@ -27,6 +27,10 @@ body{
   height: 50vh;
 }
 
+.nav{
+  position: sticky
+}
+
 @media only screen and (max-width: 600px) {
   .landing {
     height: 45vh !important;
