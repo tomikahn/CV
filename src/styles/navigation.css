@@ -1,0 +1,16 @@
+.nav-item{
+    margin-left: 1rem;
+    margin-right: 2rem;
+}
+
+.nav{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #EB5160;
+    color: white;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    cursor: pointer
+}
