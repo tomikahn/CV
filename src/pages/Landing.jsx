@@ -57,18 +57,18 @@ const Landing = () => {
     };
   }, []);
 
-  useEffect(() => {
-    // Check if the current URL contains the hash for the 'about' section
-    if (window.location.hash === "#about") {
-      if (isAboutVisible) {
-        // Scroll to the 'about' section smoothly
-        window.scrollTo({
-          top: document.getElementById("about").offsetTop,
-          behavior: "smooth",
-        });
-      }
-    }
-  }, [isAboutVisible]);
+  // useEffect(() => {
+  //   // Check if the current URL contains the hash for the 'about' section
+  //   if (window.location.hash === "#about") {
+  //     if (isAboutVisible) {
+  //       // Scroll to the 'about' section smoothly
+  //       window.scrollTo({
+  //         top: document.getElementById("about").offsetTop,
+  //         behavior: "smooth",
+  //       });
+  //     }
+  //   }
+  // }, [isAboutVisible]);
 
   const skillImages = [
     "./assets/html.png",
@@ -94,7 +94,7 @@ const Landing = () => {
 
   return (
     <>
-      <div style={{ height: "60vh", marginTop: "5rem" }}>
+      <div style={{ height: "60vh", marginTop: "5rem" }} className="first-section">
         <div style={{ marginLeft: "3rem" }}>
           <TypewriterText text="&gt; Loading..." isVisible={isLoadingVisible} />
           {isImageVisible && (
@@ -163,7 +163,6 @@ const Landing = () => {
                 width: "60vw",
                 textAlign: "center",
                 height: "100vh",
-                width: "50vw",
                 // marginTop: "3rem",
                 display: "flex",
                 flexDirection: "column",
@@ -178,11 +177,12 @@ const Landing = () => {
                   fontSize: "5rem",
                   marginBottom: "0px",
                 }}
+                className="title"
               >
                 About Me
               </h1>
 
-              <p style={{ fontSize: "2rem" }}>
+              <p style={{ fontSize: "2rem" }} className="par">
                 Artificial intelligence (AI), sometimes called machine
                 intelligence, is intelligence demonstrated by machines, unlike
                 the natural intelligence displayed by humans and animals.
@@ -210,6 +210,7 @@ const Landing = () => {
         >
           <motion.div
             id="skills"
+            className="skills"
             ref={skillsRef} // Attach the ref
             initial={{ x: "-100%", opacity: 0 }} // Initial position and opacity
             animate={{ x: skillsInView ? "0" : "-100%", opacity: 1 }} // Animate in from the left and fade in
@@ -244,6 +245,7 @@ const Landing = () => {
               animate={{ x: "0" }} // Animate paragraph coming in from the left
               transition={{ duration: 0.5, delay: 0.2 }} // Delay and duration for paragraph animation
               style={{ fontSize: "1.6rem" }}
+              className="par"
             >
               HTML, JavaScript, CSS, TypeScript, React, React Native <br />{" "}
               Angular, Redux, Git, Node, Firebase, Photoshop, Illustrator <br />{" "}
@@ -269,7 +271,7 @@ const Landing = () => {
               ))}
             </div>
           </motion.div>
-          <div style={{ position: "relative", zIndex: "9", right: "2rem" }}>
+          <div style={{ position: "relative", zIndex: "9", right: "2rem" }} className="typer">
             <img src="./mecoding.png" alt="" />
           </div>
         </div>
@@ -281,10 +283,15 @@ const Landing = () => {
             backgroundImage: 'url("blueprint-type-background-cartoon 1.png")', // Reemplaza con tu URL de imagen
             backgroundSize: "cover",
             backgroundPosition: "center",
-            textAlign:'center'
+            textAlign:'center',
+            height:"100vh",
+            display:"flex",
+            alignItems:"center",
+            justifyContent:"center"
           }}
         >
-          <h1>
+          <div>
+          <h1 style={{paddingBottom:"0.8rem", fontFamily: "IBM Plex Mono", fontSize:"2.3rem"}}>
             Recent Projects
           </h1>
           <div
@@ -310,8 +317,8 @@ const Landing = () => {
                     margin: "10px",
                     backgroundColor: "red",
                     borderRadius: "12px",
-                    height: "200px",
-                    width: "200px",
+                    height: "300px",
+                    width: "150px",
                   }}
                 >
                   {index}
@@ -319,6 +326,8 @@ const Landing = () => {
               ))}
             </div>
           </div>
+          </div>
+          
         </div>
       )}
     </>

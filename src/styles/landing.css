@@ -1,19 +1,69 @@
-.terminal-text{
-    color: white;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: bold;
-    margin-top: 1rem;
+.terminal-text {
+  color: white;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: bold;
+  margin-top: 1rem;
 }
 
-.btn-pink{
-    margin-top: 5rem;
-    background-color: #EB5160;
-    border: none;
-    padding: 20px 7rem;
-    border-radius: 6px;
-    color: white;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: bold;
-    font-size: 1.1rem;
-    cursor: pointer;
+.btn-pink {
+  margin-top: 5rem;
+  background-color: #eb5160;
+  border: none;
+  padding: 20px 7rem;
+  border-radius: 6px;
+  color: white;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* Add this to your CSS */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Add this to your CSS */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.terminal-text {
+  /* text-align: center; */
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .first-section {
+    height: 100vh !important;
+  }
+  .container {
+    margin-top: 2rem;
+  }
+  .terminal-text {
+    font-size: 18px;
+  }
+  .title {
+    margin-top: 0rem !important;
+    font-size: 2.5rem !important;
+  }
+  .par {
+    font-size: 1.3rem !important;
+  }
+  .skills {
+    width: 100vw !important;
+    background-color: transparent !important;
+  }
+  .typer {
+    display: none !important;
+  }
+
+  .btn-pink{
+    width: 90vw !important;
+    font-size: 1rem !important;
+  }
+  /* Add more responsive styles here */
 }
