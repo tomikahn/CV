@@ -71,12 +71,21 @@ const Landing = () => {
   }, [isAboutVisible]);
 
   const skillImages = [
-    "./html.png",
-    "./javascript.png",
-    "./css.png",
-    "./typescript.png",
-    "./react.png",
-    "./react-native.png",
+    "./assets/html.png",
+    "./assets/js.png",
+    "./assets/css.png",
+    "./assets/ts.png",
+    "./assets/react.png",
+    "./assets/git.png",
+    "./assets/redux.png",
+    "./assets/angular.png",
+    "./assets/ai.png",
+    "./assets/ae.png",
+    "./assets/ps.png",
+    "./assets/figma.png",
+    "./assets/firebase.png",
+    "./assets/postman.png",
+
     // Add paths for the rest of your skill images here
   ];
 
@@ -188,7 +197,17 @@ const Landing = () => {
       )}
 
       {isAboutVisible && (
-        <div style={{width:"100%", display:"flex", alignItems:"center", justifyContent:"center", marginBottom:"3rem", marginTop:"5rem", height:"100vh"}}>
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginBottom: "3rem",
+            marginTop: "5rem",
+            height: "100vh",
+          }}
+        >
           <motion.div
             id="skills"
             ref={skillsRef} // Attach the ref
@@ -208,14 +227,15 @@ const Landing = () => {
               borderLeft: "6px solid #EB5160",
               borderRadius: "2px",
               width: "80vw",
-              background: 'linear-gradient(270deg, #071013 0.16%, #0C181B 99.85%)'
+              background:
+                "linear-gradient(270deg, #071013 0.16%, #0C181B 99.85%)",
             }}
           >
             <motion.h2
               initial={{ x: "-100%" }} // Initial x position for heading
               animate={{ x: "0" }} // Animate heading coming in from the left
               transition={{ duration: 0.5 }} // Duration for heading animation
-              style={{fontSize:"3rem"}}
+              style={{ fontSize: "3rem" }}
             >
               &lt;Skills&gt;
             </motion.h2>
@@ -223,8 +243,7 @@ const Landing = () => {
               initial={{ x: "-100%" }} // Initial x position for paragraph
               animate={{ x: "0" }} // Animate paragraph coming in from the left
               transition={{ duration: 0.5, delay: 0.2 }} // Delay and duration for paragraph animation
-              style={{fontSize:"1.6rem"}}
-
+              style={{ fontSize: "1.6rem" }}
             >
               HTML, JavaScript, CSS, TypeScript, React, React Native <br />{" "}
               Angular, Redux, Git, Node, Firebase, Photoshop, Illustrator <br />{" "}
@@ -250,6 +269,56 @@ const Landing = () => {
               ))}
             </div>
           </motion.div>
+          <div style={{ position: "relative", zIndex: "9", right: "2rem" }}>
+            <img src="./mecoding.png" alt="" />
+          </div>
+        </div>
+      )}
+
+      {isAboutVisible && (
+        <div
+          style={{
+            backgroundImage: 'url("blueprint-type-background-cartoon 1.png")', // Reemplaza con tu URL de imagen
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            textAlign:'center'
+          }}
+        >
+          <h1>
+            Recent Projects
+          </h1>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <div
+              className="grid-container"
+              style={{ display: "flex", flexWrap: "wrap" }}
+            >
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
+                <motion.div
+                  key={index}
+                  className="box"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  style={{
+                    flex: "1 0 calc(25% - 20px)",
+                    margin: "10px",
+                    backgroundColor: "red",
+                    borderRadius: "12px",
+                    height: "200px",
+                    width: "200px",
+                  }}
+                >
+                  {index}
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       )}
     </>
