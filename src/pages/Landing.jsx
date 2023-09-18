@@ -3,6 +3,7 @@ import "../styles/landing.css";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { motion } from "framer-motion"; // Import framer-motion
 import { useInView } from "react-intersection-observer";
+import resumePDF from "./cv-kahn-2023.pdf";
 
 const TypewriterText = ({ text, isVisible }) => {
   const [displayText, setDisplayText] = useState("");
@@ -94,7 +95,10 @@ const Landing = () => {
 
   return (
     <>
-      <div style={{ height: "60vh", marginTop: "5rem" }} className="first-section">
+      <div
+        style={{ height: "60vh", marginTop: "5rem" }}
+        className="first-section"
+      >
         <div style={{ marginLeft: "3rem" }}>
           <TypewriterText text="&gt; Loading..." isVisible={isLoadingVisible} />
           {isImageVisible && (
@@ -271,7 +275,10 @@ const Landing = () => {
               ))}
             </div>
           </motion.div>
-          <div style={{ position: "relative", zIndex: "9", right: "2rem" }} className="typer">
+          <div
+            style={{ position: "relative", zIndex: "9", right: "2rem" }}
+            className="typer"
+          >
             <img src="./mecoding.png" alt="" />
           </div>
         </div>
@@ -283,51 +290,84 @@ const Landing = () => {
             backgroundImage: 'url("blueprint-type-background-cartoon 1.png")', // Reemplaza con tu URL de imagen
             backgroundSize: "cover",
             backgroundPosition: "center",
-            textAlign:'center',
-            height:"100vh",
-            display:"flex",
-            alignItems:"center",
-            justifyContent:"center"
+            textAlign: "center",
+            height: "100vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
           <div>
-          <h1 style={{paddingBottom:"0.8rem", fontFamily: "IBM Plex Mono", fontSize:"2.3rem"}}>
-            Recent Projects
-          </h1>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <div
-              className="grid-container"
-              style={{ display: "flex", flexWrap: "wrap" }}
+            <h1
+              style={{
+                paddingBottom: "0.8rem",
+                fontFamily: "IBM Plex Mono",
+                fontSize: "2.3rem",
+              }}
             >
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
-                <motion.div
-                  key={index}
-                  className="box"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  style={{
-                    flex: "1 0 calc(25% - 20px)",
-                    margin: "10px",
-                    backgroundColor: "red",
-                    borderRadius: "12px",
-                    height: "300px",
-                    width: "150px",
-                  }}
-                >
-                  {index}
-                </motion.div>
-              ))}
+              Recent Projects
+            </h1>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <div
+                className="grid-container"
+                style={{ display: "flex", flexWrap: "wrap" }}
+              >
+                {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
+                  <motion.div
+                    key={index}
+                    className="box"
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.2 }}
+                    style={{
+                      flex: "1 0 calc(25% - 20px)",
+                      margin: "10px",
+                      backgroundColor: "red",
+                      borderRadius: "12px",
+                      height: "300px",
+                      width: "150px",
+                    }}
+                  >
+                    {index}
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
-          </div>
-          
+        </div>
+      )}
+
+      {isAboutVisible && (
+        <div
+        className="download-section"
+          style={{
+            height: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img src="./assets/thanks.png" style={{marginBottom:"-7rem"}} alt="" className="thanks-img"/>
+          <motion.button
+            className="btn-pink"
+            whileHover={{ scale: 1.1 }} // Scale up on hover
+            whileTap={{ scale: 0.9 }} // Scale down on tap
+            onClick={() => {
+              const link = document.createElement("a");
+              link.href = resumePDF;
+              link.download = "resume.pdf"; // Cambia esto al nombre que desees para el archivo descargado
+              link.click();
+            }}
+          >
+            Download Resume
+          </motion.button>
         </div>
       )}
     </>

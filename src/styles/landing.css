@@ -65,5 +65,8 @@ img {
     width: 90vw !important;
     font-size: 1rem !important;
   }
+  .thanks-img{
+    margin-bottom: -3rem !important;
+  }
   /* Add more responsive styles here */
 }
