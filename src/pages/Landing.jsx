@@ -4,6 +4,12 @@ import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { motion } from "framer-motion"; // Import framer-motion
 import { useInView } from "react-intersection-observer";
 import resumePDF from "./cv-kahn-2023.pdf";
+import triviamerica from "./triviamerica.png";
+import doi from "./doi2.png";
+import gemplaces from "./gemplaces.png";
+import viena from "./vienalogo.png";
+import brickbitz from "./brickbitz.png";
+import brains from "./brains.jpg";
 
 const TypewriterText = ({ text, isVisible }) => {
   const [displayText, setDisplayText] = useState("");
@@ -88,6 +94,15 @@ const Landing = () => {
     "./assets/postman.png",
 
     // Add paths for the rest of your skill images here
+  ];
+
+  const data = [
+    { foto: triviamerica, titulo: "Trivia Website" },
+    { foto: viena, titulo: "Brand Landing Page" },
+    { foto: brains, titulo: "NFT generator" },
+    { foto: gemplaces, titulo: "Blog site" },
+    { foto: doi, titulo: "USA campaign" },
+    { foto: brickbitz, titulo: "Blockchain Project" },
   ];
 
   const [aboutRef, aboutInView] = useInView();
@@ -291,7 +306,7 @@ const Landing = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             textAlign: "center",
-            height: "100vh",
+            height: "fit-content",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -303,6 +318,7 @@ const Landing = () => {
                 paddingBottom: "0.8rem",
                 fontFamily: "IBM Plex Mono",
                 fontSize: "2.3rem",
+                marginTop:"8rem"
               }}
             >
               Recent Projects
@@ -316,9 +332,9 @@ const Landing = () => {
             >
               <div
                 className="grid-container"
-                style={{ display: "flex", flexWrap: "wrap" }}
+                style={{ display: "flex", flexWrap: "wrap",marginBottom:"8rem"}}
               >
-                {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
+                {data.map((item, index) => (
                   <motion.div
                     key={index}
                     className="box"
@@ -326,15 +342,24 @@ const Landing = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.2 }}
                     style={{
-                      flex: "1 0 calc(25% - 20px)",
+                      flex: "1 0 calc(33.33% - 20px)", // Cambia el 33.33% para mostrar 3 elementos por fila
                       margin: "10px",
-                      backgroundColor: "red",
                       borderRadius: "12px",
-                      height: "300px",
+                      height: "400px",
                       width: "150px",
+                      boxSizing: "border-box", // Para incluir margen y relleno en el ancho
                     }}
                   >
-                    {index}
+                    <img
+                      style={{
+                        height: "300px",
+                        width: "100%",
+                        borderRadius:"10px"
+                      }}
+                      src={item.foto}
+                      alt={item.titulo}
+                    />
+                    <h2 style={{marginTop:"10px"}}>{item.titulo}</h2>
                   </motion.div>
                 ))}
               </div>
@@ -345,7 +370,7 @@ const Landing = () => {
 
       {isAboutVisible && (
         <div
-        className="download-section"
+          className="download-section"
           style={{
             height: "100vh",
             display: "flex",
@@ -354,7 +379,12 @@ const Landing = () => {
             justifyContent: "center",
           }}
         >
-          <img src="./assets/thanks.png" style={{marginBottom:"-7rem"}} alt="" className="thanks-img"/>
+          <img
+            src="./assets/thanks.png"
+            style={{ marginBottom: "-7rem" }}
+            alt=""
+            className="thanks-img"
+          />
           <motion.button
             className="btn-pink"
             whileHover={{ scale: 1.1 }} // Scale up on hover
