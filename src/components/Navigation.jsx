@@ -11,6 +11,13 @@ const Navigation = () => {
       <a href="/#skills" style={{ textDecoration: "none", color: "white" }}>
         <div className="nav-item">Skills</div>
       </a>
+
+      <a href="/#projects" style={{ textDecoration: "none", color: "white" }}>
+        <div className="nav-item">Projects</div>
+      </a>
+      <a href="/#resume" style={{ textDecoration: "none", color: "white" }}>
+        <div className="nav-item">Resume</div>
+      </a>
     </div>
   );
 };
