@@ -1,20 +1,31 @@
-.nav-item{
-    margin-left: 1rem;
-    margin-right: 2rem;
+.nav-item {
+  margin-left: 1rem;
+  margin-right: 2rem;
 }
 
-.nav{
-    width: 100vw;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background-color: #EB5160;
-    color: white;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 600;
-    cursor: pointer;
-    position: fixed;
-    top: 0px;
-    z-index: 999;
+.nav {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #eb5160;
+  color: white;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  cursor: pointer;
+  position: fixed;
+  top: 0px;
+  z-index: 999;
+}
+
+@media screen and (max-width: 600px) {
+  .nav {
+    width: 100vw !important;
+    text-align: center !important;
+  }
+  .nav-item {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
 }
