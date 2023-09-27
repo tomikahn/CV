@@ -491,7 +491,7 @@ const Landing = () => {
             onClick={() => {
               const link = document.createElement("a");
               link.href = resumePDF;
-              link.download = "resume.pdf"; // Cambia esto al nombre que desees para el archivo descargado
+              link.download = "kahn-cv.pdf"; // Cambia esto al nombre que desees para el archivo descargado
               link.click();
             }}
           >
