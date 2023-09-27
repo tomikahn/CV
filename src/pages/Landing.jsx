@@ -123,7 +123,7 @@ const Landing = () => {
   return (
     <>
       <div
-        style={{ height: "60vh", marginTop: "5rem" }}
+        style={{ height: "100vh", marginTop: "5rem" }}
         className="first-section"
       >
         <div style={{ marginLeft: "3rem" }}>
